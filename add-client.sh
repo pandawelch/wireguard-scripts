@@ -5,7 +5,7 @@ then
 	echo "must pass a client name as an arg: add-client.sh new-client"
 else
 	echo "Creating client config for: $1"
-	mkdir -p clients/$1
+	mkdir -p /root/wg/clients/$1
 	wg genkey | tee /root/wg/clients/$1/$1.priv | wg pubkey > /root/wg/clients/$1/$1.pub
 	key=$(cat /root/wg/clients/$1/$1.priv) 
 	ip="10.200.200."$(expr $(cat last-ip.txt | tr "." " " | awk '{print $4}') + 1)
