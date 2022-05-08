@@ -1,5 +1,11 @@
 #!/bin/bash
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+echo $SCRIPT_DIR
+
+
+
+
 if [ $# -eq 0 ]
 then
 	echo "must pass a client name as an arg: add-client.sh new-client"
